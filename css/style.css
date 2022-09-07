@@ -130,6 +130,8 @@ main {
     width: 80vh;
     height: 70vh;
     margin: 10px;
+    background-color: rgba(204, 204, 204, 0.1);
+    border-radius: 10px;
     /* border-color: var(--main-color);
     border-style: double; */
 }
@@ -148,6 +150,7 @@ main {
 }
 .containerRightBottom>img {
     border-radius: 10px;
+    margin: 10px;
 }
 /* //Asaid Right  */
 
