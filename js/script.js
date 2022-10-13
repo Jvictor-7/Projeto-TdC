@@ -10,15 +10,45 @@ function btnClick(e){
 }
 
 function btnConfirmClick(){
+
+    let entrada = document.getElementById('entrada').value;
+    var error = document.getElementById("error");
+
+    if(entrada == ''){
+
+        error.removeAttribute('hidden');
+        error.innerText = 'Você não inseriu fichas';
+        return;
+    }
+
+    error.setAttribute('hidden', true);
+
     const btn = document.querySelectorAll("button");
 
     let btnConfirm = document.getElementById("btnConfirm");
 
-    btnConfirm.setAttribute("disabled", 'true');
-
+    
     btn.forEach(element => {
         if(element.classList.contains("actived")){
+            let btnValue = element.value;
+
+            if(entrada < btnValue){
+                error.innerText = 'Fichas insuficiente';
+                error.removeAttribute('hidden');
+
+                document.getElementById("saida").value = entrada;
+                document.getElementById('entrada').value = '';
+                
+                return;
+            }
+
+            btnConfirm.setAttribute("disabled", 'true');
+
+            document.getElementById("saida").value = '';
+
+
             var elementId = element.getAttribute('id');
+            
             // Lots of code
             setTimeout(function(){ 
                 TransitionState(elementId);
@@ -43,11 +73,19 @@ function TransitionState(state){
             stateDiv.classList.remove('buttonStateAtual');
 
             stateDiv = document.getElementById('state10');
-            stateDiv.classList.add('buttonStateAtual'); 
+
+            stateDiv.classList.remove('state10');
+            stateDiv.classList.add('activedState'); 
+
+            document.getElementById("saida").value = entrada.value - document.getElementById(state).value;
+
+            entrada.value = '';
 
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
-                stateDiv.classList.remove('buttonStateAtual');
+
+                stateDiv.classList.remove('activedState');
+                stateDiv.classList.add('state10');
 
                 document.getElementById(state).classList.remove('actived');
 

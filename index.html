@@ -17,54 +17,68 @@
                 <p>
                     <strong>
                         Para retirar o seu alimento em nossa máquina,
-                        você deve inserir a sua quantidade de fichas e escolher um dos IDs,
+                        você deve escolher um dos IDs e inserir a quantidade de fichas acima do valor do item,
                         após isso aguarde seu alimento ser entregue.
                     </strong>
                 </p>
-                <p>
-                    Insira aqui a sua quantidade de fichas:
-                </p>
-                <input type="number" name="" id="">
-                <button class="buttonConfirm" onclick="">Inserir</button>
                 <p>
                     Escolha o ID dos alimentos desejados...
                 </p>
                 <ul class="ulCheckbox">
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche1" onclick="btnClick('lanche1')">1</button>
+                        <button class="buttonLanche" id="lanche1" value="15" onclick="btnClick('lanche1')">1</button>
+                        <div class="value">15$</div>
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche2" onclick="btnClick('lanche2')">2</button>
+                        <button class="buttonLanche" id="lanche2" value="16" onclick="btnClick('lanche2')">2</button>
+                        <div class="value">16$</div>
+                    </li>
+                    <li class="liCheckbox">
+                        <button class="buttonLanche" id="lanche3" value="17" onclick="btnClick('lanche3')">3</button>
+                        <div class="value">17$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche3" onclick="btnClick('lanche3')">3</button>
+                        <button class="buttonLanche" id="lanche4" value="18" onclick="btnClick('lanche4')">4</button>
+                        <div class="value">18$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche4" onclick="btnClick('lanche4')">4</button>
+                        <button class="buttonLanche" id="lanche5" value="19" onclick="btnClick('lanche5')">5</button>
+                        <div class="value">19$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche5" onclick="btnClick('lanche5')">5</button>
+                        <button class="buttonLanche" id="lanche6" value="10" onclick="btnClick('lanche6')">6</button>
+                        <div class="value">10$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche6" onclick="btnClick('lanche6')">6</button>
-                    </li>
-                    <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche7" onclick="btnClick('lanche7')">7</button>
+                        <button class="buttonLanche" id="lanche7" value="11" onclick="btnClick('lanche7')">7</button>
+                        <div class="value">11$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche8" onclick="btnClick('lanche8')">8</button>
+                        <button class="buttonLanche" id="lanche8" value="12" onclick="btnClick('lanche8')">8</button>
+                        <div class="value">12$</div>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche9" onclick="btnClick('lanche9')">9</button>
+                        <button class="buttonLanche" id="lanche9" value="13" onclick="btnClick('lanche9')">9</button>
+                        <div class="value">13$</div>
+
                     </li>
                 </ul>
+
+                <p>
+                    Insira aqui a sua quantidade de fichas:
+                </p>
+                <input type="number" name="" id="entrada">
+                <p>Estorno (troco)</p>
+                <input type="number" name="" id="saida" disabled>
+                <p hidden id="error"></p>
                 <button class="buttonConfirm" id="btnConfirm" onclick="btnConfirmClick()">Confirmar</button>
+                
         </aside>
     
         <aside class="asideRight">
@@ -118,7 +132,8 @@
                     </strong>
                 </p>
                 <ul class="ulStates">
-                    <li class="liState">
+                    <li class="liState" style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="img/arrow.svg" alt="" width="50px" class="arrow">
                         <div class="buttonLanche buttonStateAtual" id="state0" value="lanche1">q0</div>
                     </li>
                     <li class="liState">
@@ -133,7 +148,7 @@
                         <div class="buttonLanche" id="state9" value="lanche10">q9</div>
                     </li>
                     <li class="liState">
-                        <div class="buttonLanche" id="state10" value="lanche11">q10</div>
+                        <div class="buttonLanche state10" id="state10" value="lanche11">q10</div>
                     </li>
                 </ul>
                 <p>
