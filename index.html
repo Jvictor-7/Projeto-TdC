@@ -9,10 +9,18 @@
     <script src="js/script.js"></script>
 </head>
 <body>
+    <!-- <a href="#abrirModal">Open Modal</a>
+
+    <div id="abrirModal" class="modal">
+        <a href="#fechar" title="Fechar" class="fechar">x</a>
+        <h2>Comida entregue!</h2>
+        <img id="imgComida" width="200px" src="" alt="">
+    </div> -->
     <header class="header">
         <h1><strong>ICfood</strong></h1>
     </header>
     <main>
+
         <aside class="asideLeft">
                 <p>
                     <strong>
@@ -92,35 +100,35 @@
                 <ul class="listFood">
                     <li>
                         <p>
-                            1 - Comida
+                            1 - B. Negresco
                         </p>
                         <p>
-                            1 - Comida
+                            2 - B. Passatempo
                         </p>
                         <p>
-                            1 - Comida
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            1 - Comida
-                        </p>
-                        <p>
-                            1 - Comida
-                        </p>
-                        <p>
-                            1 - Comida
+                            3 - B. Bono
                         </p>
                     </li>
                     <li>
                         <p>
-                            1 - Comida
+                            4 - S. Ruffles
                         </p>
                         <p>
-                            1 - Comida
+                            5 - S. Cheetos
+                        </p>
+                        <p>
+                            6 - S. Doritos
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            7 - Coca-cola
+                        </p>
+                        <p>
+                            8 - G. Antártica
                         </p>    
                         <p>
-                            1 - Comida
+                            9 - E. RedBull
                         </p>
                     </li>
                 </ul>
@@ -134,25 +142,25 @@
                 <ul class="ulStates">
                     <li class="liState" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="img/arrow.svg" alt="" width="50px" class="arrow">
-                        <div class="buttonLanche buttonStateAtual" id="state0" value="lanche1">q0</div>
+                        <div class="buttonLanche buttonStateAtual" id="state0" onmouseover="descricao(0)">q0</div>
                     </li>
                     <li class="liState">
-                        <div class="buttonLanche" id="state1" value="lanche2">q1</div>
-                        <div class="buttonLanche" id="state2" value="lanche3">q2</div>
-                        <div class="buttonLanche" id="state3" value="lanche4">q3</div>
-                        <div class="buttonLanche" id="state4" value="lanche5">q4</div>
-                        <div class="buttonLanche" id="state5" value="lanche6">q5</div>
-                        <div class="buttonLanche" id="state6" value="lanche7">q6</div>
-                        <div class="buttonLanche" id="state7" value="lanche8">q7</div>
-                        <div class="buttonLanche" id="state8" value="lanche9">q8</div>
-                        <div class="buttonLanche" id="state9" value="lanche10">q9</div>
+                        <div class="buttonLanche" id="state1" onmouseover="descricao(1)">q1</div>
+                        <div class="buttonLanche" id="state2" onmouseover="descricao(2)">q2</div>
+                        <div class="buttonLanche" id="state3" onmouseover="descricao(3)">q3</div>
+                        <div class="buttonLanche" id="state4" onmouseover="descricao(4)">q4</div>
+                        <div class="buttonLanche" id="state5" onmouseover="descricao(5)">q5</div>
+                        <div class="buttonLanche" id="state6" onmouseover="descricao(6)">q6</div>
+                        <div class="buttonLanche" id="state7" onmouseover="descricao(7)">q7</div>
+                        <div class="buttonLanche" id="state8" onmouseover="descricao(8)">q8</div>
+                        <div class="buttonLanche" id="state9"  onmouseover="descricao(9)">q9</div>
                     </li>
                     <li class="liState">
-                        <div class="buttonLanche state10" id="state10" value="lanche11">q10</div>
+                        <div class="buttonLanche state10" id="state10"  onmouseover="descricao(10)">q10</div>
                     </li>
                 </ul>
-                <p>
-                    Estado Atual (q0) : Esperando ação do cliente...
+                <p id="descricao">
+                    
                 </p>
                 <!-- <img src="img/estadosAutomato.jpg" alt=""> -->
             </div>

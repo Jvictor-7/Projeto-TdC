@@ -92,6 +92,51 @@ main {
     padding-top: 24px;
     padding-bottom: 32px;
 }
+/* modal  */
+.modal {
+position: fixed;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+top: 24px;
+right: 24px;
+bottom: 24px;
+left: 24px;
+font-family: Arial, Helvetica, sans-serif;
+background: rgba(0,0,0,0.8);
+z-index: 99999;
+opacity:0;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+pointer-events: none;
+}
+.modal:target {
+opacity: 1;
+pointer-events: auto;
+}
+.modal > div {
+width: 400px;
+position: relative;
+margin: 10% auto;
+padding: 15px 20px;
+background: #fff;
+}
+.fechar {
+position: absolute;
+width: 30px;
+right: -15px;
+top: -20px;
+text-align: center;
+line-height: 30px;
+margin-top: 5px;
+background: #ff4545;
+border-radius: 50%;
+font-size: 16px;
+text-decoration: none;
+color: #8d0000;
+}
 /* Asaid Left  */
 .asideLeft {
     display: flex;
@@ -191,7 +236,7 @@ button:disabled:hover{
     justify-content: center;
     align-items: center;
     width: 70%;
-    min-height: 550px;
+    padding: 15px;
     margin: 10px;
     background-color: rgba(204, 204, 204, 0.1);
     border-radius: 4px;
@@ -203,13 +248,12 @@ button:disabled:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
     margin: 10px;
 }
 .listFood {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 12px 24px;
     list-style: none;
 }
 .containerRight{
@@ -219,7 +263,6 @@ button:disabled:hover{
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 10% 10%;
-    height: 30vh;
 }
 .containerRight>img {
     border-radius: 4px;
