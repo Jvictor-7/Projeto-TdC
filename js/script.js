@@ -12,6 +12,10 @@ function btnClick(e){
 function btnConfirmClick(){
     const btn = document.querySelectorAll("button");
 
+    let btnConfirm = document.getElementById("btnConfirm");
+
+    btnConfirm.setAttribute("disabled", 'true');
+
     btn.forEach(element => {
         if(element.classList.contains("actived")){
             var elementId = element.getAttribute('id');
@@ -46,6 +50,8 @@ function TransitionState(state){
                 stateDiv.classList.remove('buttonStateAtual');
 
                 document.getElementById(state).classList.remove('actived');
+
+                btnConfirm.removeAttribute('disabled')
                 
             }, 1000);
 
