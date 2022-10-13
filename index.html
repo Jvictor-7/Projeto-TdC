@@ -15,67 +15,137 @@
     <main>
         <aside class="asideLeft">
                 <p>
-                    Insira as sua quantidade de fichas:
+                    <strong>
+                        Para retirar o seu alimento em nossa máquina,
+                        você deve inserir a sua quantidade de fichas e escolher um dos IDs,
+                        após isso aguarde seu alimento ser entregue.
+                    </strong>
+                </p>
+                <p>
+                    Insira aqui a sua quantidade de fichas:
                 </p>
                 <input type="number" name="" id="">
+                <button class="buttonConfirm" onclick="">Inserir</button>
                 <p>
                     Escolha o ID dos alimentos desejados...
                 </p>
                 <ul class="ulCheckbox">
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche1" onclick="btnClick('lanche1')">Lanche</button>
+                        <button class="buttonLanche" id="lanche1" onclick="btnClick('lanche1')">1</button>
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche2" onclick="btnClick('lanche2')">Lanche</button>
+                        <button class="buttonLanche" id="lanche2" onclick="btnClick('lanche2')">2</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche3" onclick="btnClick('lanche3')">Lanche</button>
+                        <button class="buttonLanche" id="lanche3" onclick="btnClick('lanche3')">3</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche4" onclick="btnClick('lanche4')">Lanche</button>
+                        <button class="buttonLanche" id="lanche4" onclick="btnClick('lanche4')">4</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche5" onclick="btnClick('lanche5')">Lanche</button>
+                        <button class="buttonLanche" id="lanche5" onclick="btnClick('lanche5')">5</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche6" onclick="btnClick('lanche6')">Lanche</button>
+                        <button class="buttonLanche" id="lanche6" onclick="btnClick('lanche6')">6</button>
+                    </li>
+                    <li class="liCheckbox">
+                        <button class="buttonLanche" id="lanche7" onclick="btnClick('lanche7')">7</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche7" onclick="btnClick('lanche7')">Lanche</button>
+                        <button class="buttonLanche" id="lanche8" onclick="btnClick('lanche8')">8</button>
 
                     </li>
                     <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche8" onclick="btnClick('lanche8')">Lanche</button>
-
+                        <button class="buttonLanche" id="lanche9" onclick="btnClick('lanche9')">9</button>
                     </li>
-                    <li class="liCheckbox">
-                        <button class="buttonLanche" id="lanche9" onclick="btnClick('lanche9')">Lanche</button>
-
-                    </li>
+                    <button class="" onclick="btnConfirmClick()">Confirmar</button>
                 </ul>
-                <button class="buttonConfirm" onclick="btnConfirmClick()">Confirmar</button>
         </aside>
     
         <aside class="asideRight">
-            <div class="containerRightTop">
+            <div class="containerLeft">
+                <p>
+                    <strong>
+                        Lista detalhada dos Alimentos:
+                    </strong>
+                </p>
                 <img src="img/maquina.png" alt="" width="230px">
+                <ul class="listFood">
+                    <li>
+                        <p>
+                            1 - Comida
+                        </p>
+                        <p>
+                            1 - Comida
+                        </p>
+                        <p>
+                            1 - Comida
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            1 - Comida
+                        </p>
+                        <p>
+                            1 - Comida
+                        </p>
+                        <p>
+                            1 - Comida
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            1 - Comida
+                        </p>
+                        <p>
+                            1 - Comida
+                        </p>    
+                        <p>
+                            1 - Comida
+                        </p>
+                    </li>
+                </ul>
             </div>
-            <div class="containerRightBottom">
-                <div class="circle" id="s1">s1</div>
-                <div class="circle" id="s2">s2</div>
-                <div class="circle" id="s3">s3</div>
-                <div class="circle" id="s4">s4</div>
+            <div class="containerRight">
+                <p>
+                    <strong>
+                        Diagrama de Estados do Autômato
+                    </strong>
+                </p>
+                <ul class="ulStates">
+                    <li class="liState">
+                        <div class="buttonLanche buttonStateAtual" id="state0" value="lanche1">q0</div>
+                    </li>
+                    <li class="liState">
+                        <div class="buttonLanche" id="state1" value="lanche2">q1</div>
+                        <div class="buttonLanche" id="state2" value="lanche3">q2</div>
+                        <div class="buttonLanche" id="state3" value="lanche4">q3</div>
+                        <div class="buttonLanche" id="state4" value="lanche5">q4</div>
+                        <div class="buttonLanche" id="state5" value="lanche6">q5</div>
+                        <div class="buttonLanche" id="state6" value="lanche7">q6</div>
+                        <div class="buttonLanche" id="state7" value="lanche8">q7</div>
+                        <div class="buttonLanche" id="state8" value="lanche9">q8</div>
+                        <div class="buttonLanche" id="state9" value="lanche10">q9</div>
+                    </li>
+                    <li class="liState">
+                        <div class="buttonLanche" id="state10" value="lanche11">q10</div>
+                    </li>
+                </ul>
+                <p>
+                    Estado Atual (q0) : Esperando ação do cliente...
+                </p>
+                <!-- <img src="img/estadosAutomato.jpg" alt=""> -->
             </div>
         </aside>
     </main>
 
-    <footer>
-        <h4>© 2022 Copyright: IC</h4>
-    </footer>
+    <!-- <footer>
+        <h4>&copy 2022 Copyright: IC</h4>
+    </footer> -->
 </body>
 </html>

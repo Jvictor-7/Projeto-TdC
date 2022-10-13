@@ -14,35 +14,43 @@ function btnConfirmClick(){
 
     btn.forEach(element => {
         if(element.classList.contains("actived")){
-            element.classList.remove("actived");
+            var elementId = element.getAttribute('id');
+            // Lots of code
+            setTimeout(function(){ 
+                TransitionState(elementId);
+            }, 1000);
         }
     });
 
-    const arrayCircles = ['s1', 's2', 's3', 's4'];
 
-        // Lots of code
-        setTimeout(function(){  // Beginning of code that should run AFTER the timeout
-            TransitionState(arrayCircles, 0);
-            // Lots more code
-        }, 1000);  // Put the timeout here
 }
 
-function TransitionState(states, stateIndex){
-    console.log(stateIndex)
-    // while(stateIndex!= 4){
-    //     var circles = document.getElementsByClassName("circle");
+function TransitionState(state){
 
-    //     for(let i = 0; i < circles.length; i++){
-    //         if(circles[i].classList.contains('currentState')){
-    //             circles[i].classList.remove('currentState');
-    //         }
-    //     }
-    //     document.getElementById(states[stateIndex]).classList.add('currentState');
+    var state0 = document.getElementById('state0');
 
-    //     // Lots of code
-    //     setTimeout(function(){  // Beginning of code that should run AFTER the timeout
-    //         TransitionState(states, stateIndex+1);
-    //         // Lots more code
-    //     }, 1000);  // Put the timeout here
-    // }
+    setTimeout(function(){
+        state0.classList.remove('buttonStateAtual');
+
+        var stateDiv = document.getElementById('state'+state[state.length-1]);
+        stateDiv.classList.add('buttonStateAtual');  
+        
+        setTimeout(function(){
+            stateDiv.classList.remove('buttonStateAtual');
+
+            stateDiv = document.getElementById('state10');
+            stateDiv.classList.add('buttonStateAtual'); 
+
+            setTimeout(function(){ 
+                state0.classList.add("buttonStateAtual")
+                stateDiv.classList.remove('buttonStateAtual');
+
+                document.getElementById(state).classList.remove('actived');
+                
+            }, 1000);
+
+        }, 1000);
+        
+       
+    }, 1000);
 }
