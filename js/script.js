@@ -20,6 +20,8 @@ function btnConfirmClick(){
 
     // ---
     
+    let imgMaquina = document.getElementById('imgMaquina');
+
     let entrada = document.getElementById('entrada').value;
 
     var error = document.getElementById("error");
@@ -60,17 +62,19 @@ function btnConfirmClick(){
             var elementId = element.getAttribute('id');
             
             // Lots of code
-            setTimeout(function(){ 
+            setTimeout(function(){
                 TransitionState(elementId);
             }, 1500);
         }
     });
+    
+    
 }
 
 function TransitionState(state){
-
+    
     var state0 = document.getElementById('state0');
-
+    
     setTimeout(function(){
          // --- SOUND OBJETO CAINDO ---
 
@@ -80,32 +84,36 @@ function TransitionState(state){
 
         // ---
         state0.classList.remove('buttonStateAtual');
-
+        
         var stateDiv = document.getElementById('state'+state[state.length-1]);
-        stateDiv.classList.add('buttonStateAtual');  
+        stateDiv.classList.add('buttonStateAtual');
+        imgMaquina.style.opacity = 0;
+        imgMaquina.src = './img/baixoMaquina.jpg';
         
         setTimeout(function(){
             stateDiv.classList.remove('buttonStateAtual');
-
+            
             stateDiv = document.getElementById('state10');
-
+            
             stateDiv.classList.remove('state10');
             stateDiv.classList.add('activedState'); 
-
+            
             document.getElementById("saida").value = entrada.value - document.getElementById(state).value;
-
+            
             entrada.value = '';
-
+            
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
-
+                imgMaquina.src = './img/cimaMaquina.jpg';
+                imgMaquina.style.opacity = 1;
+                
                 stateDiv.classList.remove('activedState');
                 stateDiv.classList.add('state10');
                 document.getElementById(state).classList.remove('actived');
 
                 btnConfirm.removeAttribute('disabled')
                 
-            }, 2000);
+            }, 5000);
 
         }, 2000);
         

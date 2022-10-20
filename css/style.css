@@ -243,6 +243,21 @@ button:disabled:hover{
     /* border-color: var(--main-color);
     border-style: double; */
 }
+.boxImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:200px;
+    height:270px;
+}
+.boxImg > img {
+    width: 100%;
+    height: 100%;
+    /* -webkit-transition: opacity 10s ease-in-out;
+    -moz-transition: opacity 10s ease-in-out;
+    -o-transition: opacity 10s ease-in-out; */
+    transition: opacity 7s ease-in-out;
+}
 .containerLeft {
     display: flex;
     flex-direction: column;
