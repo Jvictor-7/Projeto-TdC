@@ -11,6 +11,14 @@ function btnClick(e){
 }
 
 function btnConfirmClick(){
+
+    // --- SOUND MOEDA---
+
+    var audio1 = new Audio();
+    audio1.src = "audio/moeda.mpeg";
+    audio1.play();
+
+    // ---
     
     let entrada = document.getElementById('entrada').value;
 
@@ -54,11 +62,9 @@ function btnConfirmClick(){
             // Lots of code
             setTimeout(function(){ 
                 TransitionState(elementId);
-            }, 1000);
+            }, 1500);
         }
     });
-
-
 }
 
 function TransitionState(state){
@@ -66,6 +72,13 @@ function TransitionState(state){
     var state0 = document.getElementById('state0');
 
     setTimeout(function(){
+         // --- SOUND OBJETO CAINDO ---
+
+        var audio2 = new Audio();
+        audio2.src = "audio/caindo.mpeg";
+        audio2.play();
+
+        // ---
         state0.classList.remove('buttonStateAtual');
 
         var stateDiv = document.getElementById('state'+state[state.length-1]);
@@ -92,12 +105,12 @@ function TransitionState(state){
 
                 btnConfirm.removeAttribute('disabled')
                 
-            }, 1000);
+            }, 2000);
 
-        }, 1000);
+        }, 2000);
         
        
-    }, 1000);
+    }, 2000);
 
 }
 
