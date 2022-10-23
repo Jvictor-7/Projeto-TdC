@@ -1,4 +1,5 @@
 
+// --- ATIVAR E DESATIVAR BTN DO PAINEL (BTN DAS COMIDAS) ---
 function btnClick(e){
     const btn = document.querySelectorAll("button");
     
@@ -9,7 +10,9 @@ function btnClick(e){
     });
     document.getElementById(e).classList.toggle("actived");
 }
+// ---
 
+// --- BTN DE CONFIRMAR O PEDIDO ---
 function btnConfirmClick(){
 
     // --- SOUND MOEDA---
@@ -26,6 +29,8 @@ function btnConfirmClick(){
 
     var error = document.getElementById("error");
 
+    // --- SE FIZER O PEDIDO SEM INSERIR FICHAR ---
+
     if(entrada == ''){
 
         error.removeAttribute('hidden');
@@ -33,17 +38,20 @@ function btnConfirmClick(){
         return;
     }
 
+    // ---
+
     error.setAttribute('hidden', true);
 
     const btn = document.querySelectorAll("button");
 
     let btnConfirm = document.getElementById("btnConfirm");
 
-    
+    // --- VERIFICAR QUAL BTN ESTÁ ATIVO PARA PROSSEGUIR COM O PEDIDO ---
     btn.forEach(element => {
         if(element.classList.contains("actived")){
             let btnValue = element.value;
 
+            // --- SE O VALOR DA COMIDA FOR MAIOR QUE AS FICHAS INSERIDAS ---
             if(entrada < btnValue){
                 error.innerText = 'Fichas insuficiente';
                 error.removeAttribute('hidden');
@@ -53,6 +61,9 @@ function btnConfirmClick(){
                 
                 return;
             }
+            // ---
+
+            // --- SE NÃO ---
 
             btnConfirm.setAttribute("disabled", 'true');
 
@@ -60,17 +71,22 @@ function btnConfirmClick(){
 
 
             var elementId = element.getAttribute('id');
+
+
             
-            // Lots of code
+            // --- CHAMADA DE EVENTO (MUDAR ESTADO DO AUTOMATO) APÓS UM TEMPO ---
             setTimeout(function(){
                 TransitionState(elementId);
             }, 1500);
+            // ---
         }
     });
+    // ---
     
     
 }
 
+// --- FUNÇÃO PARA A MUDANÇA DE ESTADOS DO AUTÔMATO ---
 function TransitionState(state){
     
     var state0 = document.getElementById('state0');
@@ -83,24 +99,36 @@ function TransitionState(state){
         audio2.play();
 
         // ---
+
+        // --- MUDAR ESTADO ATUAL ---
+
         state0.classList.remove('buttonStateAtual');
-        
         var stateDiv = document.getElementById('state'+state[state.length-1]);
         stateDiv.classList.add('buttonStateAtual');
+
+        // ---
+
         imgMaquina.style.opacity = 0;
         imgMaquina.src = './img/baixoMaquina.jpg';
+
+        // --- CHAMADA DE EVENTO (MUDANÇA DE ESTADO) APÓS UM TEMPO ---
         
         setTimeout(function(){
+            // --- MUDAR ESTADO ATUAL ---
             stateDiv.classList.remove('buttonStateAtual');
             
             stateDiv = document.getElementById('state10');
             
             stateDiv.classList.remove('state10');
             stateDiv.classList.add('activedState'); 
+
+            // ---
             
             document.getElementById("saida").value = entrada.value - document.getElementById(state).value;
             
             entrada.value = '';
+
+            // --- CHAMADA DE EVENTP (VOLTAR PARA ESTADO INICIAL) ---
             
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
@@ -115,16 +143,23 @@ function TransitionState(state){
                 
             }, 5000);
 
+            // ---
+
         }, 2000);
+
+        // ---
         
        
     }, 2000);
 
+    // ---
+
 }
+
+// --- DESCRIÇÃO DE CADA AUTÔMATO ---
 
 function descricao(val) {
     var descricaoElemento = document.getElementById('descricao');
-    console.log(val)
     switch (val) {
         case 0:
             descricaoElemento.innerHTML = 'Estado q0: Esperando ação do cliente...'
@@ -161,3 +196,5 @@ function descricao(val) {
             break       
     }
 }
+
+// ---
